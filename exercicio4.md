@@ -54,3 +54,37 @@ flowchart TB
         D3
         E3
     end
+
+
+    ## 2. Transparência, Agência e Controle
+
+```mermaid
+flowchart LR
+
+    A["IA classifica o risco"]
+
+    A --> B["TRANSPARÊNCIA"]
+
+    B --> B1["Problema:<br/>Atendente não entende a classificação da IA"]
+    B1 --> B2["Melhoria:<br/>Mostrar fatores explicativos"]
+    B2 --> B3["Aceleração<br/>Imobilidade<br/>Histórico de quedas<br/>Confiança do modelo"]
+
+    A --> C["AGÊNCIA"]
+
+    C --> C1["Problema:<br/>Atendente não consegue contestar ou ajustar"]
+    C1 --> C2["Melhoria:<br/>Permitir revisão da classificação"]
+    C2 --> C3["Concordo<br/>Ajustar risco<br/>Solicitar revisão"]
+    C3 --> C4["Justificativa obrigatória"]
+
+    A --> D["CONTROLE"]
+
+    D --> D1["Problema:<br/>Atendente não consegue agir se discordar da IA"]
+    D1 --> D2["Melhoria:<br/>Permitir intervenção manual"]
+    D2 --> D3["Override manual"]
+    D2 --> D4["Acionar emergência agora"]
+
+    B3 --> E["Decisão do atendente"]
+    C4 --> E
+    D3 --> E
+    D4 --> E
+```
