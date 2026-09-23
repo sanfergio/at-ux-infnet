@@ -1,5 +1,6 @@
-````markdown
-# Service Blueprint — Detecção e Atendimento de Quedas
+# Diagramas
+
+## 1. Service Blueprint
 
 ```mermaid
 flowchart TB
@@ -10,19 +11,19 @@ flowchart TB
     D["4. Escalonamento"]
     E["5. Encerramento"]
 
-    A1["Wearable capta movimento<br/>IA analisa sinais vitais e queda"]
-    B1["Notificação push/SMS<br/>Tela do aplicativo"]
+    A1["Wearable capta movimento<br/>IA analisa sinais vitais e padrão de queda"]
+    B1["Notificação push/SMS para cuidador<br/>Tela do aplicativo"]
     C1["Cuidador vê alerta recebido<br/>e status inicial"]
     D1["Cuidador/paciente recebe<br/>ligação, orientação ou visita"]
     E1["Confirmação da resolução<br/>e orientações finais"]
 
-    A2["Modelo de IA<br/>Regras de risco<br/>Histórico do paciente"]
+    A2["Wearable capta dados<br/>IA analisa sinais e classifica risco"]
     B2["Central recebe alerta<br/>pré-classificado pela IA"]
     C2["Atendente valida dados<br/>Liga para cuidador/paciente<br/>Confirma gravidade"]
     D2["Atendente aciona SAMU,<br/>médico ou equipe interna<br/>e registra decisão"]
     E2["Registro do caso<br/>Auditoria e acompanhamento"]
 
-    A3["Modelo de IA<br/>Regras de risco<br/>Histórico"]
+    A3["Modelo de IA<br/>Regras de risco<br/>Histórico do paciente"]
     B3["Fila de alertas<br/>SLA<br/>Classificação de risco"]
     C3["Protocolo de escalonamento<br/>Scripts<br/>Integração telefônica"]
     D3["Protocolo de emergência<br/>Contatos<br/>Prontuário"]
@@ -53,4 +54,3 @@ flowchart TB
         D3
         E3
     end
-````
