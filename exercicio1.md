@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
 
     A[Experiência do Idoso e Cuidador]
@@ -7,14 +8,15 @@ flowchart TD
     A --> D[Service Blueprint]
     A --> E[Mapa de Stakeholders / Ecossistema]
 
-    B --> B1[Finalidade: entender dores, medos, falas, necessidades e comportamentos]
+    B --> B1[Entender dores, medos, falas, necessidades e comportamentos]
     B --> B2[Perspectiva: Paciente / Cuidador]
 
-    C --> C1[Finalidade: mapear etapas, emoções, canais e atritos]
+    C --> C1[Mapear etapas, emoções, canais e atritos]
     C --> C2[Perspectiva: Paciente / Cuidador]
 
-    D --> D1[Finalidade: conectar usuário, atendimento, sistemas, wearable e processos]
+    D --> D1[Conectar usuário, atendimento, sistemas, wearable e processos internos]
     D --> D2[Perspectiva: Organizacional + experiência]
 
-    E --> E1[Finalidade: identificar atores, responsabilidades, informações e dependências]
+    E --> E1[Identificar atores, responsabilidades, trocas de informação e dependências]
     E --> E2[Perspectiva: Organizacional]
+```
