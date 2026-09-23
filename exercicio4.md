@@ -56,7 +56,7 @@ flowchart TB
     end
 ````
 
-    ## 2. Transparência, Agência e Controle
+## 2. Transparência, Agência e Controle
 
 ```mermaid
 flowchart LR
