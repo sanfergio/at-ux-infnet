@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitalis Care — Onboarding do Cuidador</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  max-width: 420px;
+  width: 100%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h1 { font-size: 22px; margin-bottom: 12px; }
+
+.intro { font-size: 16px; margin-bottom: 20px; line-height: 1.5; }
+
+.card {
+  background: #eef4ff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card h2 { font-size: 16px; margin-bottom: 8px; }
+
+#wearable-status { font-size: 15px; margin-bottom: 12px; }
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background: #0057b8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.btn-primary:hover { background: #004494; }
+
+.help-link {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #0057b8;
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Bem-vindo ao Lembrete Inteligente</h1>
+    <p class="intro">
+      A IA ajusta horários conforme sua rotina. Você pode aceitar, ajustar
+      ou desfazer quando quiser.
+    </p>
+
+    <section class="card" id="wearable-card">
+      <h2>Status do Wearable</h2>
+      <p id="wearable-status">Carregando...</p>
+      <button id="btn-vincular" class="btn-primary" hidden>
+        Vincular wearable agora
+      </button>
+    </section>
+
+    <button class="btn-primary" id="btn-comecar">Começar configuração</button>
+    <a href="#" class="help-link">Preciso de ajuda</a>
+  </main>
+
+  <script>
+
+const API_URL = "http://localhost:3000/api/wearable-status";
+
+const statusEl = document.getElementById("wearable-status");
+const btnVincular = document.getElementById("btn-vincular");
+
+async function carregarStatusWearable() {
+  try {
+    const resposta = await fetch(API_URL);
+    const dados = await resposta.json();
+
+    if (dados.vinculado) {
+      statusEl.textContent = "Wearable vinculado ✅";
+    } else {
+      statusEl.textContent = "Wearable não vinculado ⚠️";
+      btnVincular.hidden = false;
+    }
+  } catch (erro) {
+    statusEl.textContent = "Não foi possível carregar o status.";
+  }
+}
+
+btnVincular.addEventListener("click", () => {
+  alert("Fluxo de vinculação será implementado na próxima etapa.");
+});
+
+carregarStatusWearable();
+    
+  </script>
+</body>
+</html>
